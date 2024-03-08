@@ -25,6 +25,14 @@
     font-family: Arial, sans-serif;
 }
 
+.logout-button, .logout-button:link, .logout-button:visited, .logout-button:hover, .logout-button:active {
+    color: white !important; /* Força a cor do texto para branco em todos os estados */
+    background-color: transparent !important; /* Mantém o fundo transparente */
+    border: none !important; /* Remove a borda do botão */
+    text-decoration: none !important; /* Remove a sublinhado do link */
+}
+
+
 .footer-custom {
     text-align: center; /* Alinha o texto ao centro */
     width: 100%; /* Garante que o rodapé ocupe a largura total */

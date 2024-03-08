@@ -64,13 +64,22 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': BASE_DIR / 'db.sqlite3',
+#    }
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'portalUEMG',
+        'USER': 'voidmmn',
+        'PASSWORD': 'bellatrix',
+        'HOST': '192.168.100.126',  # Ou 'localhost' se o banco de dados estiver na mesma máquina
+        'PORT': '3306',
     }
 }
 
 AUTH_USER_MODEL = 'acesso.Usuario'
+LOGOUT_REDIRECT_URL = '/' 
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators

@@ -1,0 +1,32 @@
+/* static/css/estilo.css */
+.navbar-custom {
+    background-color: rgb(56, 94, 117) !important;
+}
+
+.navbar-custom .navbar-nav .nav-link {
+    color: white !important;
+}
+
+.navbar-brand-custom {
+    background-color: red !important; /* Define a cor de fundo para vermelho */
+    color: white !important; /* Define a cor da letra para branco */
+    padding: 5px 10px; /* Adiciona um pouco de padding para visualização melhor */
+}
+
+.navbar-brand-logo {
+    background-color: white; /* Define o fundo como branco */
+    color: #000 !important; /* Define a cor do texto para preto ou outra cor de sua preferência */
+    padding: 5px 10px; /* Ajuste o padding conforme necessário */
+}
+
+.welcome-text {
+    text-align: center;
+    font-size: 24px;
+    font-family: Arial, sans-serif;
+}
+
+.footer-custom {
+    text-align: center; /* Alinha o texto ao centro */
+    width: 100%; /* Garante que o rodapé ocupe a largura total */
+    padding: 10px 0; /* Adiciona um pouco de padding vertical para visualização melhor */
+}

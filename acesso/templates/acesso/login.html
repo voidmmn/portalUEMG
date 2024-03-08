@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="username">Apelido ou E-mail</label>
+        <input type="text" name="username" class="form-control" id="username" required>
+    </div>
+    <div class="form-group">
+        <label for="password">Senha</label>
+        <input type="password" name="password" class="form-control" id="password" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Login</button>
+    <a href="{% url 'cadastro' %}" class="btn btn-secondary">Criar nova conta</a>
+</form>
+{% endblock %}

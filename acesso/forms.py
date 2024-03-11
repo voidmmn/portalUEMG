@@ -1,9 +1,8 @@
-# conta/forms.py
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
-#from django.contrib.auth.models import User
-from acesso.models import Usuario
+from acesso.models import PerfilUsuario, Usuario
 
+# Form para o Cadastro de novos usuários do sistema
 class CadastroUsuarioForm(UserCreationForm):
     email = forms.EmailField(required=True, label='Email Institucional')
     nickname = forms.CharField(required=True, label='Apelido')
@@ -25,3 +24,11 @@ class CadastroUsuarioForm(UserCreationForm):
         if commit:
             user.save()
         return user
+
+
+# Form para atualizar o perfil dos usuários do sistema
+class PerfilUsuarioForm(forms.ModelForm):
+    class Meta:
+        model = PerfilUsuario
+        fields = ['nome', 'foto', 'data_nascimento', 'telefone', 'curso', 'rg', 'cpf']
+        # Inclua todos os campos que você deseja que o usuário preencha

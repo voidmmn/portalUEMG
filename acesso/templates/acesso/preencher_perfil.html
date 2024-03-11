@@ -2,12 +2,12 @@
 
 {% block content %}
 <div class="col-md-6 offset-md-3">
-    <h2>Novo Usuário</h2>
+    <h2>Atualize o seu perfil</h2>
     <br/>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" class="btn btn-primary">Cadastrar</button>
+        <button type="submit" class="btn btn-primary">Salvar</button>
     </form>
 </div>
 {% endblock %}

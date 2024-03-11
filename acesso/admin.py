@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
-from .models import Usuario
+from .models import PerfilUsuario, Usuario
 
 class UsuarioAdmin(BaseUserAdmin):
     model = Usuario
@@ -25,4 +25,13 @@ class UsuarioAdmin(BaseUserAdmin):
     filter_horizontal = []
     list_filter = ['is_admin']
 
+
+# Classe ModelAdmin opcional para customização
+class PerfilUsuarioAdmin(admin.ModelAdmin):
+    list_display = ('usuario', 'data_nascimento', 'numero_registro')  # Campos que você quer mostrar na listagem
+    search_fields = ('usuario__username', 'numero_registro')  # Campos pelos quais você quer permitir busca
+    filter_horizontal = ('papeis',)  # Facilita a seleção de múltiplos papéis
+
+
 admin.site.register(Usuario, UsuarioAdmin)
+admin.site.register(PerfilUsuario, PerfilUsuarioAdmin)

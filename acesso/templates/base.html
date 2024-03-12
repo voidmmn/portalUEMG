@@ -79,54 +79,50 @@
             {% endfor %}
         {% endif %}
 
-        {% if user.is_authenticated %}
-
-        {% else %}   
-            <!-- Seção de Destaques -->
-            <div id="cursosCarousel" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    {% for curso in cursos %}
-                        <li data-target="#cursosCarousel" data-slide-to="{{ forloop.counter0 }}" {% if forloop.first %}class="active"{% endif %}></li>
-                    {% endfor %}
-                </ol>
-                <div class="carousel-inner">
-                  {% for curso in cursos %}
-                  <div class="carousel-item {% if forloop.first %}active{% endif %}" data-interval="5000">
-                    <div class="container">
-                      <div class="row justify-content-center">
-                        <div class="col-md-5"> <!-- Ajusta para ocupar dois terços da tela -->
-                          <img src="{{ curso.imagem.url }}" class="d-block w-100" alt="{{ curso.nome }}">
-                          <p>Caminho da imagem: {{ curso.imagem.url }}</p>                          
-                        </div>
-                      </div>
-                      <div class="row justify-content-center">
-                        <div class="col-md-8 text-center p-3 "> <!-- Descrição com borda e padding -->
-                          <h5>{{ curso.nome }}</h5>
-                          <p>{{ curso.descricao }}</p>
-                        </div>
-                      </div>
+        <!-- Seção de Destaques -->
+        <div id="cursosCarousel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                {% for curso in cursos %}
+                    <li data-target="#cursosCarousel" data-slide-to="{{ forloop.counter0 }}" {% if forloop.first %}class="active"{% endif %}></li>
+                {% endfor %}
+            </ol>
+            <div class="carousel-inner">
+                {% for curso in cursos %}
+                <div class="carousel-item {% if forloop.first %}active{% endif %}" data-interval="5000">
+                <div class="container">
+                    <div class="row justify-content-center">
+                    <div class="col-md-5"> <!-- Ajusta para ocupar dois terços da tela -->
+                        <img src="{{ curso.imagem.url }}" class="d-block w-100" alt="{{ curso.nome }}">
+                        <!-- <p>Caminho da imagem: {{ curso.imagem.url }}</p>                           -->
                     </div>
-                  </div>
-                  {% endfor %}
+                    </div>
+                    <div class="row justify-content-center">
+                    <div class="col-md-8 text-center p-3 "> <!-- Descrição com borda e padding -->
+                        <h5>{{ curso.nome }}</h5>
+                        <p>{{ curso.descricao }}</p>
+                    </div>
+                    </div>
                 </div>
-                <!-- Controles do Carousel -->
-                <a class="carousel-control-prev" href="#cursosCarousel" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Anterior</span>
-                  </a>
-                  <a class="carousel-control-next" href="#cursosCarousel" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Próximo</span>
-                </a>                
+                </div>
+                {% endfor %}
             </div>
-                            
-            <!-- Seção de Notícias/Eventos em Cards -->
-            <div class="container mt-4">
-                <div class="row">
-                    <!-- Cards de Notícias/Eventos -->
-                </div>
-            </div>     
-        {% endif %}
+            <!-- Controles do Carousel -->
+            <a class="carousel-control-prev" href="#cursosCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Anterior</span>
+                </a>
+                <a class="carousel-control-next" href="#cursosCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Próximo</span>
+            </a>                
+        </div>
+                        
+        <!-- Seção de Notícias/Eventos em Cards -->
+        <div class="container mt-4">
+            <div class="row">
+                <!-- Cards de Notícias/Eventos -->
+            </div>
+        </div>     
 
         <!-- Bloco de conteúdo -->
         {% block content %}
